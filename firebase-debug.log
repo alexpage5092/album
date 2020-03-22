@@ -1,0 +1,233 @@
+[debug] [2020-03-22T22:19:28.465Z] ----------------------------------------------------------------------
+[debug] [2020-03-22T22:19:28.468Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\alexp\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2020-03-22T22:19:28.468Z] CLI Version:   7.11.0
+[debug] [2020-03-22T22:19:28.468Z] Platform:      win32
+[debug] [2020-03-22T22:19:28.469Z] Node Version:  v12.14.0
+[debug] [2020-03-22T22:19:28.471Z] Time:          Sun Mar 22 2020 15:19:28 GMT-0700 (Pacific Daylight Time)
+[debug] [2020-03-22T22:19:28.471Z] ----------------------------------------------------------------------
+[debug] [2020-03-22T22:19:28.471Z] 
+[debug] [2020-03-22T22:19:28.485Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-22T22:19:28.485Z] > authorizing via signed-in user
+[debug] [2020-03-22T22:19:28.485Z] [iam] checking project album-81780 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2020-03-22T22:19:28.487Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-03-22T22:19:28.487Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-03-22T22:19:28.705Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:19:28.716Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/album-81780:testIamPermissions  
+
+[debug] [2020-03-22T22:19:29.337Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:19:29.340Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/album-81780  
+ 
+[debug] [2020-03-22T22:19:29.593Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'album-81780'...
+[info] 
+[info] i  deploying database, storage, firestore, functions, hosting
+[info] i  database: checking rules syntax...
+[debug] [2020-03-22T22:19:36.534Z] >>> HTTP REQUEST PUT https://album-81780.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
+[debug] [2020-03-22T22:19:36.936Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database album-81780 is valid
+[debug] [2020-03-22T22:19:36.944Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/album-81780  
+ 
+[debug] [2020-03-22T22:19:37.407Z] <<< HTTP RESPONSE 200
+[info] i  firebase.storage: checking storage.rules for compilation errors...
+[debug] [2020-03-22T22:19:37.428Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/album-81780:test  
+
+[debug] [2020-03-22T22:19:37.949Z] <<< HTTP RESPONSE 200
+[warn] !  [W] undefined:undefined - Ruleset uses old version (version [1]). Please update to the latest version (version [2]).
+[info] +  firebase.storage: rules file storage.rules compiled successfully
+[info] i  firestore: reading indexes from firestore.indexes.json...
+[info] i  cloud.firestore: checking firestore.rules for compilation errors...
+[debug] [2020-03-22T22:19:37.984Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/album-81780:test  
+
+[debug] [2020-03-22T22:19:38.361Z] <<< HTTP RESPONSE 200
+[warn] !  [W] undefined:undefined - Ruleset uses old version (version [1]). Please update to the latest version (version [2]).
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully
+[debug] [2020-03-22T22:19:38.371Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "^8.9.2",
+    "firebase-functions": "^3.3.0"
+  },
+  "private": true,
+  "engines": {
+    "node": "8"
+  }
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2020-03-22T22:19:38.405Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/album-81780/services/cloudfunctions.googleapis.com  
+ 
+[debug] [2020-03-22T22:19:38.406Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/album-81780/services/runtimeconfig.googleapis.com  
+ 
+[debug] [2020-03-22T22:19:38.944Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:19:38.952Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2020-03-22T22:19:38.955Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/album-81780/adminSdkConfig  
+ 
+[debug] [2020-03-22T22:19:39.143Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:19:39.149Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/album-81780/versions  
+
+[debug] [2020-03-22T22:19:40.473Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:19:40.477Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/album-81780/releases?pageSize=10&pageToken=  
+ 
+[debug] [2020-03-22T22:19:40.866Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:19:40.868Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/album-81780/rulesets/b7dfc8fe-f012-4b28-a3a0-e395f62a87b1  
+ 
+[debug] [2020-03-22T22:19:41.234Z] <<< HTTP RESPONSE 200
+[info] i  storage: uploading rules storage.rules...
+[debug] [2020-03-22T22:19:41.238Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/album-81780/rulesets  
+
+[debug] [2020-03-22T22:19:41.669Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:19:41.670Z] [rules] created ruleset projects/album-81780/rulesets/421cae21-cda7-44da-ace7-5fbdad51145f
+[debug] [2020-03-22T22:19:41.673Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/album-81780/releases?pageSize=10&pageToken=  
+ 
+[debug] [2020-03-22T22:19:41.673Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta2/projects/album-81780/databases/(default)/collectionGroups/-/indexes  
+ 
+[debug] [2020-03-22T22:19:42.044Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:19:42.045Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/album-81780/rulesets/95622b6d-a7ed-47cc-b2da-35c9ca440f4a  
+ 
+[debug] [2020-03-22T22:19:42.183Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:19:42.185Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta2/projects/album-81780/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false  
+ 
+[debug] [2020-03-22T22:19:42.396Z] <<< HTTP RESPONSE 200
+[info] i  firestore: uploading rules firestore.rules...
+[debug] [2020-03-22T22:19:42.399Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/album-81780/rulesets  
+
+[debug] [2020-03-22T22:19:42.771Z] <<< HTTP RESPONSE 200
+[info] +  firestore: deployed indexes in firestore.indexes.json successfully
+[debug] [2020-03-22T22:19:42.821Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:19:42.823Z] [rules] created ruleset projects/album-81780/rulesets/fb06f787-3ce9-49d9-8164-43c69240f398
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2020-03-22T22:19:42.830Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/album-81780/configs  
+ 
+[debug] [2020-03-22T22:19:43.091Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (26.49 KB) for uploading
+[debug] [2020-03-22T22:19:44.681Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/album-81780/locations/us-central1/functions:generateUploadUrl  
+ 
+[debug] [2020-03-22T22:19:53.300Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:19:53.301Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-e6f27f55-73ff-48f3-9e17-4a38ab2add9b/40291a43-d0c1-4b85-9a67-b48f3fcc7968.zip?GoogleAccessId=service-123722583737@gcf-admin-robot.iam.gserviceaccount.com&Expires=1584917392&Signature=e3mkpMdOrXY54IA7Eu%2BxSk1iV%2F31Zd2L0QVEnFLFz1Ry7oWAI4pK6Ld%2FsSTUcqgpk6GRfnd%2BmkPn9sX4w3Wh9oDkYtuIDGfJUpJO4%2BNKmELiVg1LDB%2FmZ5o97l1d8M1K09pgiPUGjkIBXY64zAM7IdScCM%2F6MkpZvJOJ7wQ2MeMcQA5ygRFc0aA%2FYi0ljsVfoZthO3sd7tqwqBoUYDl7oyBIZHflb9UJXBl5D80nAuRw6ZSuvlOV%2F7Gq83QwkSRbV0oHKImQo9MwtpzI5ttmHlKof6h0RKUGI4MhqJd4YbW7sXfGmd3Shh3FFF99lqmybfhl2XryAKXmdVSM6P10jg%3D%3D  
+ <request body omitted>
+[debug] [2020-03-22T22:19:53.769Z] <<< HTTP RESPONSE 200
+[info] +  functions: functions folder uploaded successfully
+[info] i  hosting[album-81780]: beginning deploy...
+[info] i  hosting[album-81780]: found 15 files in build
+[debug] [2020-03-22T22:19:53.813Z] [hosting] hash cache [YnVpbGQ] not populated
+[debug] [2020-03-22T22:19:55.276Z] [hosting] hash cache [YnVpbGQ] stored for 15 files
+[debug] [2020-03-22T22:19:55.276Z] [hosting][hash queue][FINAL]
+[debug] [2020-03-22T22:19:55.277Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/album-81780/versions/ac112f44d836b253:populateFiles  
+ <request body omitted>
+[debug] [2020-03-22T22:19:56.048Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:19:56.074Z] [hosting][populate queue][FINAL]
+[debug] [2020-03-22T22:19:56.074Z] [hosting] uploads queued: 15
+[debug] [2020-03-22T22:19:58.360Z] [hosting][upload queue][FINAL]
+[info] +  hosting[album-81780]: file upload complete
+[debug] [2020-03-22T22:19:58.363Z] [hosting] deploy completed after 4591ms
+[info] i  database: releasing rules...
+[debug] [2020-03-22T22:19:58.549Z] >>> HTTP REQUEST PUT https://album-81780.firebaseio.com/.settings/rules.json  
+ {
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
+[debug] [2020-03-22T22:19:58.947Z] <<< HTTP RESPONSE 200
+[info] +  database: rules for database album-81780 released successfully
+[debug] [2020-03-22T22:19:58.954Z] [rules] releasing firebase.storage/album-81780.appspot.com with ruleset projects/album-81780/rulesets/421cae21-cda7-44da-ace7-5fbdad51145f
+[debug] [2020-03-22T22:19:58.955Z] >>> HTTP REQUEST PATCH https://firebaserules.googleapis.com/v1/projects/album-81780/releases/firebase.storage/album-81780.appspot.com  
+
+[debug] [2020-03-22T22:19:59.378Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:19:59.379Z] [rules] updated release projects/album-81780/releases/firebase.storage/album-81780.appspot.com
+[info] +  storage: released rules storage.rules to firebase.storage
+[debug] [2020-03-22T22:19:59.381Z] [rules] releasing cloud.firestore with ruleset projects/album-81780/rulesets/fb06f787-3ce9-49d9-8164-43c69240f398
+[debug] [2020-03-22T22:19:59.382Z] >>> HTTP REQUEST PATCH https://firebaserules.googleapis.com/v1/projects/album-81780/releases/cloud.firestore  
+
+[debug] [2020-03-22T22:19:59.581Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:19:59.582Z] [rules] updated release projects/album-81780/releases/cloud.firestore
+[info] +  firestore: released rules firestore.rules to cloud.firestore
+[debug] [2020-03-22T22:19:59.588Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/album-81780/locations/-/functions  
+ 
+[debug] [2020-03-22T22:19:59.951Z] <<< HTTP RESPONSE 200
+[info] i  functions: creating Node.js 8 function authOnCreate(us-central1)...
+[debug] [2020-03-22T22:19:59.958Z] Trigger is:  {"eventTrigger":{"resource":"projects/album-81780","eventType":"providers/firebase.auth/eventTypes/user.create","service":"firebaseauth.googleapis.com"}}
+[debug] [2020-03-22T22:19:59.962Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/album-81780/services/cloudscheduler.googleapis.com  
+ 
+[debug] [2020-03-22T22:20:00.393Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:20:00.395Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/album-81780/locations/us-central1/functions  
+
+[debug] [2020-03-22T22:20:01.066Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:20:01.071Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxidW0tODE3ODAvdXMtY2VudHJhbDEvYXV0aE9uQ3JlYXRlL3pvUF9aU21zVkNN  
+ 
+[debug] [2020-03-22T22:20:01.297Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:20:03.300Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxidW0tODE3ODAvdXMtY2VudHJhbDEvYXV0aE9uQ3JlYXRlL3pvUF9aU21zVkNN  
+ 
+[debug] [2020-03-22T22:20:03.485Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:20:05.488Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxidW0tODE3ODAvdXMtY2VudHJhbDEvYXV0aE9uQ3JlYXRlL3pvUF9aU21zVkNN  
+ 
+[debug] [2020-03-22T22:20:05.694Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:20:07.695Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxidW0tODE3ODAvdXMtY2VudHJhbDEvYXV0aE9uQ3JlYXRlL3pvUF9aU21zVkNN  
+ 
+[debug] [2020-03-22T22:20:07.905Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:20:09.906Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxidW0tODE3ODAvdXMtY2VudHJhbDEvYXV0aE9uQ3JlYXRlL3pvUF9aU21zVkNN  
+ 
+[debug] [2020-03-22T22:20:10.140Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:20:12.142Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxidW0tODE3ODAvdXMtY2VudHJhbDEvYXV0aE9uQ3JlYXRlL3pvUF9aU21zVkNN  
+ 
+[debug] [2020-03-22T22:20:12.542Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:20:14.544Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxidW0tODE3ODAvdXMtY2VudHJhbDEvYXV0aE9uQ3JlYXRlL3pvUF9aU21zVkNN  
+ 
+[debug] [2020-03-22T22:20:14.756Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:20:16.761Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxidW0tODE3ODAvdXMtY2VudHJhbDEvYXV0aE9uQ3JlYXRlL3pvUF9aU21zVkNN  
+ 
+[debug] [2020-03-22T22:20:16.959Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:20:18.961Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxidW0tODE3ODAvdXMtY2VudHJhbDEvYXV0aE9uQ3JlYXRlL3pvUF9aU21zVkNN  
+ 
+[debug] [2020-03-22T22:20:19.175Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:20:21.177Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxidW0tODE3ODAvdXMtY2VudHJhbDEvYXV0aE9uQ3JlYXRlL3pvUF9aU21zVkNN  
+ 
+[debug] [2020-03-22T22:20:21.448Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:20:23.449Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxidW0tODE3ODAvdXMtY2VudHJhbDEvYXV0aE9uQ3JlYXRlL3pvUF9aU21zVkNN  
+ 
+[debug] [2020-03-22T22:20:23.656Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:20:25.660Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxidW0tODE3ODAvdXMtY2VudHJhbDEvYXV0aE9uQ3JlYXRlL3pvUF9aU21zVkNN  
+ 
+[debug] [2020-03-22T22:20:25.859Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:20:27.861Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxidW0tODE3ODAvdXMtY2VudHJhbDEvYXV0aE9uQ3JlYXRlL3pvUF9aU21zVkNN  
+ 
+[debug] [2020-03-22T22:20:28.059Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:20:30.061Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxidW0tODE3ODAvdXMtY2VudHJhbDEvYXV0aE9uQ3JlYXRlL3pvUF9aU21zVkNN  
+ 
+[debug] [2020-03-22T22:20:30.235Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:20:32.236Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxidW0tODE3ODAvdXMtY2VudHJhbDEvYXV0aE9uQ3JlYXRlL3pvUF9aU21zVkNN  
+ 
+[debug] [2020-03-22T22:20:32.425Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:20:34.427Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxidW0tODE3ODAvdXMtY2VudHJhbDEvYXV0aE9uQ3JlYXRlL3pvUF9aU21zVkNN  
+ 
+[debug] [2020-03-22T22:20:34.634Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:20:36.637Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxidW0tODE3ODAvdXMtY2VudHJhbDEvYXV0aE9uQ3JlYXRlL3pvUF9aU21zVkNN  
+ 
+[debug] [2020-03-22T22:20:36.867Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:20:38.869Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxidW0tODE3ODAvdXMtY2VudHJhbDEvYXV0aE9uQ3JlYXRlL3pvUF9aU21zVkNN  
+ 
+[debug] [2020-03-22T22:20:39.048Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:20:41.052Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxidW0tODE3ODAvdXMtY2VudHJhbDEvYXV0aE9uQ3JlYXRlL3pvUF9aU21zVkNN  
+ 
+[debug] [2020-03-22T22:20:41.265Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-22T22:20:43.270Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxidW0tODE3ODAvdXMtY2VudHJhbDEvYXV0aE9uQ3JlYXRlL3pvUF9aU21zVkNN  
+ 
+[debug] [2020-03-22T22:20:43.422Z] <<< HTTP RESPONSE 200
